@@ -1,0 +1,33 @@
+@use '../abstract/variables' as *;
+
+body {
+  font-family: $font-body;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p {
+  font-size: $font-size-base;
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
