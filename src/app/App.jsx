@@ -1,7 +1,7 @@
-import styles from './App.module.scss';
+import { Outlet } from 'react-router';
 
 function App() {
-  return <div className={styles.app}>This is my blog client</div>;
+  return <Outlet />;
 }
 
 export default App;
