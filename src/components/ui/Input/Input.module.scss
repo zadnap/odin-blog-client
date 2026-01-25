@@ -1,0 +1,34 @@
+@use '@/styles/abstract/variables' as *;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  .label {
+    &.srOnly {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
+  .input {
+    padding: $space-1 $space-2;
+    border-radius: $radius-sm;
+    border: 1px solid $color-text-title;
+    background-color: $color-background-sub;
+    transition: border-color ease 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: $color-text-body;
+    }
+  }
+}
