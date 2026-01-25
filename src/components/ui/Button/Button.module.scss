@@ -21,6 +21,11 @@
   &.outline {
     border: 1px solid $color-border;
     background-color: transparent;
+
+    &:hover {
+      border: 1px solid $color-text-title;
+      background-color: $color-background-sub;
+    }
   }
 
   &:disabled {
