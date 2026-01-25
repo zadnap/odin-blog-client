@@ -10,14 +10,11 @@ describe('Header', () => {
       </MemoryRouter>
     );
 
-  test('renders logo and site name', () => {
+  test('renders site name', () => {
     renderHeader();
 
     const logoText = screen.getByText(/hidden progress/i);
     expect(logoText).toBeInTheDocument();
-
-    const logoImage = screen.getByAltText(/hidden progress logo/i);
-    expect(logoImage).toBeInTheDocument();
   });
 
   test('renders motto text', () => {

@@ -11,12 +11,7 @@ const Header = () => {
           className={styles.logo}
           aria-label="Hidden Progress homepage"
         >
-          <img
-            className={styles.logoImage}
-            src={logo}
-            alt="Hidden Progress logo"
-          />
-          <span className={styles.logoText}>Hidden Progress</span>
+          Hidden Progress
         </Link>
         <p className={styles.motto}>Dream big, start small.</p>
       </section>
