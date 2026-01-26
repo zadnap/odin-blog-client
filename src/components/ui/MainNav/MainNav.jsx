@@ -10,10 +10,10 @@ const MainNav = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/posts/about-me">About Me</Link>
+            <Link to="/posts/slug/about-me">About Me</Link>
           </li>
           <li>
-            <Link to="/posts/contact">Contact</Link>
+            <Link to="/posts/slug/contact">Contact</Link>
           </li>
         </ul>
       </nav>

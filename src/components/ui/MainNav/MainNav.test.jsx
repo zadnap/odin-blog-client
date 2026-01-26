@@ -24,11 +24,11 @@ describe('MainNav', () => {
 
     expect(
       within(nav).getByRole('link', { name: /about me/i })
-    ).toHaveAttribute('href', '/posts/about-me');
+    ).toHaveAttribute('href', '/posts/slug/about-me');
 
     expect(within(nav).getByRole('link', { name: /contact/i })).toHaveAttribute(
       'href',
-      '/posts/contact'
+      '/posts/slug/contact'
     );
   });
 

@@ -19,7 +19,7 @@ const routes = [
         element: <MainLayout />,
         children: [
           { index: true, element: <HomePage /> },
-          { path: 'posts/:slug', element: <PostPage /> },
+          { path: 'posts/slug/:slug', element: <PostPage /> },
         ],
       },
       {
