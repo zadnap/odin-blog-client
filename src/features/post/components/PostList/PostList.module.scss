@@ -1,7 +1,14 @@
 @use '@/styles/abstract/variables' as *;
 
 .postList {
+  .title {
+    margin-bottom: $space-2;
+  }
+
   .postGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $space-6;
     padding: $space-2 0;
   }
 
@@ -17,7 +24,7 @@
 
       .pageInput {
         text-align: center;
-        width: 5ch;
+        width: 3ch;
         padding: 0 $space-1;
       }
     }

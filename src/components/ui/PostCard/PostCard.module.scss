@@ -1,0 +1,35 @@
+@use '@/styles/abstract/variables' as *;
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  padding-bottom: $space-2;
+
+  .postImage {
+    border-radius: $radius-sm;
+    margin-bottom: $space-2;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .postTitle {
+    color: $color-text-body;
+    font-size: $font-size-lg;
+  }
+
+  .postDescription {
+    margin: 0;
+  }
+
+  .postLink {
+    font-size: $font-size-sm;
+    transition: color ease 0.2s;
+    align-self: self-start;
+
+    &:hover {
+      color: $color-text-title;
+      text-decoration: underline;
+    }
+  }
+}
