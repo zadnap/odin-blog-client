@@ -1,0 +1,19 @@
+@use '@/styles/abstract/variables' as *;
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-2;
+
+  .title {
+    width: 50%;
+    text-align: center;
+    min-width: 200px;
+  }
+
+  .time {
+    margin: 0;
+    text-align: center;
+  }
+}

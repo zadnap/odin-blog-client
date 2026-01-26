@@ -1,12 +1,19 @@
+import { PostCard } from '@/components/ui';
 import styles from './PostList.module.scss';
 
-const PostList = () => {
+const PostList = ({ title, posts = [] }) => {
   return (
     <section className={styles.postList} aria-labelledby="latest-posts">
       <h2 className={styles.title} id="latest-posts">
-        Latest Posts
+        {title}
       </h2>
-      <ul className={styles.postGrid}></ul>
+      <ul className={styles.postGrid}>
+        {posts.map((post) => (
+          <li>
+            <PostCard key={post.id} {...post} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

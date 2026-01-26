@@ -1,2 +1,7 @@
+@use '@/styles/abstract/variables' as *;
+
 .postPage {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
 }
