@@ -1,0 +1,25 @@
+@use '@/styles/abstract/variables' as *;
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .page {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+
+    .pageInput {
+      text-align: center;
+      width: 3ch;
+      padding: 0 $space-1;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+  }
+}
