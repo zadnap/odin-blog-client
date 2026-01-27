@@ -1,0 +1,34 @@
+@use '@/styles/abstract/variables' as *;
+
+.authForm {
+  height: 100%;
+  width: 60%;
+  min-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  header {
+    h1 {
+      text-align: center;
+      margin-bottom: $space-2;
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .input,
+  button {
+    margin-bottom: $space-3;
+  }
+
+  .goHome {
+    text-align: center;
+  }
+}
