@@ -2,8 +2,13 @@ import { Link } from 'react-router';
 import styles from './AuthForm.module.scss';
 import { Input, Button } from '@/components/ui';
 
-const AuthForm = ({ mode, onSubmit }) => {
+const AuthForm = ({ mode, onSubmit, error, defaultValues = {} }) => {
   const isRegister = mode === 'register';
+  const errorsByField = error?.errors?.reduce((acc, err) => {
+    acc[err.field] = acc[err.field] || [];
+    acc[err.field].push(err.message);
+    return acc;
+  }, {});
 
   return (
     <form className={styles.authForm} onSubmit={onSubmit} noValidate>
@@ -23,8 +28,14 @@ const AuthForm = ({ mode, onSubmit }) => {
         name="username"
         placeholder="Username"
         id="username"
+        defaultValue={defaultValues.username || ''}
         required
       />
+      {errorsByField?.username?.map((msg, i) => (
+        <p key={i} className={styles.error}>
+          {msg}
+        </p>
+      ))}
       <Input
         className={styles.input}
         type="password"
@@ -34,16 +45,29 @@ const AuthForm = ({ mode, onSubmit }) => {
         id="password"
         required
       />
+      {errorsByField?.password?.map((msg, i) => (
+        <p key={i} className={styles.error}>
+          {msg}
+        </p>
+      ))}
       {isRegister && (
-        <Input
-          className={styles.input}
-          type="password"
-          label="Confirm password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          id="confirmPassword"
-          required
-        />
+        <>
+          <Input
+            className={styles.input}
+            type="password"
+            label="Confirm password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            id="confirmPassword"
+            required
+          />
+
+          {errorsByField?.confirmPassword?.map((msg, i) => (
+            <p key={i} className={styles.error}>
+              {msg}
+            </p>
+          ))}
+        </>
       )}
       {isRegister ? (
         <p>

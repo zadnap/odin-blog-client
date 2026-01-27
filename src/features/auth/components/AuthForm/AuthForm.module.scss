@@ -23,6 +23,12 @@
     text-decoration: underline;
   }
 
+  .error {
+    color: $color-error;
+    margin-top: -$space-3;
+    margin-bottom: $space-2;
+  }
+
   .input,
   button {
     margin-bottom: $space-3;

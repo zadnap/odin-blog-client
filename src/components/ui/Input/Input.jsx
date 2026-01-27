@@ -5,6 +5,8 @@ const Input = ({
   label,
   type = 'text',
   placeholder,
+  name,
+  defaultValue,
   value,
   onChange,
   srOnly,
@@ -24,8 +26,10 @@ const Input = ({
         id={id}
         type={type}
         placeholder={placeholder}
+        name={name}
         value={value}
         onChange={onChange}
+        defaultValue={defaultValue}
         className={`${styles.input} ${className}`}
       />
     </div>
