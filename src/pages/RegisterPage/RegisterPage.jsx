@@ -1,7 +1,7 @@
-import styles from './RegisterPage.module.scss';
+import { AuthForm } from '@/features/auth/components';
 
 const RegisterPage = () => {
-  return <div className={styles.registerPagePage}>Register Page</div>;
+  return <AuthForm mode="register" />;
 };
 
 export default RegisterPage;

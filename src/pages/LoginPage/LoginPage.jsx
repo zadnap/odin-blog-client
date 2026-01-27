@@ -1,7 +1,7 @@
-import styles from './LoginPage.module.scss';
+import { AuthForm } from '@/features/auth/components';
 
 const LoginPage = () => {
-  return <div className={styles.loginPage}>Login Page</div>;
+  return <AuthForm mode="login" />;
 };
 
 export default LoginPage;
