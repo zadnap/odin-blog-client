@@ -1,2 +1,11 @@
+@use '@/styles/abstract/variables' as *;
+
 .authLayout {
+  display: flex;
+  height: 100vh;
+
+  .outlet {
+    flex: 2;
+    padding: $space-3;
+  }
 }

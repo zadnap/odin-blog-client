@@ -1,0 +1,24 @@
+@use '@/styles/abstract/variables' as *;
+
+.testimonial {
+  flex: 1;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url(../../../../../public/images/testimonial.jpg);
+  background-size: cover;
+  background-position: right;
+  color: $color-background;
+
+  blockquote {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    margin-bottom: $space-4;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    margin: 0;
+  }
+}
