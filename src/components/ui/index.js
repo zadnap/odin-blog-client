@@ -4,5 +4,6 @@ import Input from './Input/Input';
 import Button from './Button/Button';
 import MainNav from './MainNav/MainNav';
 import PostCard from './PostCard/PostCard';
+import Loading from './Loading/Loading';
 
-export { Header, Footer, Input, Button, MainNav, PostCard };
+export { Header, Footer, Input, Button, MainNav, PostCard, Loading };

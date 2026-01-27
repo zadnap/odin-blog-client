@@ -1,0 +1,16 @@
+@use '@/styles/abstract/variables' as *;
+@use '@/styles/animation/keyframes' as *;
+
+.loading {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space-3;
+
+  svg {
+    font-size: 4rem;
+    animation: rotate ease 1s infinite;
+  }
+}
