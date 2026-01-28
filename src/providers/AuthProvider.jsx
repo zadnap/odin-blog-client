@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AuthContext } from '@/contexts/AuthContext';
+import { isTokenExpired } from '@/utils/jwt';
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -11,8 +12,12 @@ const AuthProvider = ({ children }) => {
     const storedUser = localStorage.getItem('user');
 
     if (storedToken && storedUser) {
-      setToken(storedToken);
-      setUser(JSON.parse(storedUser));
+      if (isTokenExpired(storedToken)) {
+        logout();
+      } else {
+        setToken(storedToken);
+        setUser(JSON.parse(storedUser));
+      }
     }
 
     setLoading(false);
@@ -37,7 +42,7 @@ const AuthProvider = ({ children }) => {
   const value = {
     user,
     token,
-    isAuthenticated: !!token,
+    isAuthenticated: !!token && !!user,
     login,
     logout,
     loading,
