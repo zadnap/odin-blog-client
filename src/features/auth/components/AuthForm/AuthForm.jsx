@@ -69,6 +69,7 @@ const AuthForm = ({ mode, onSubmit, error, defaultValues = {} }) => {
           ))}
         </>
       )}
+      {!isRegister && error && <p className={styles.error}>{error.message}</p>}
       {isRegister ? (
         <p>
           Already have an account? <Link to="/auth/login">Login</Link>
