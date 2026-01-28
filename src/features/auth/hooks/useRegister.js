@@ -10,7 +10,8 @@ const useRegister = () => {
       setLoading(true);
       setError(null);
 
-      await registerApi(data);
+      const res = await registerApi(data);
+      return res;
     } catch (err) {
       setError(err);
     } finally {

@@ -1,9 +1,10 @@
 import { AuthForm } from '@/features/auth/components';
-import { useRegister } from '@/features/auth/hooks';
+import { useRegister, useAuth } from '@/features/auth/hooks';
 import { Loading } from '@/components/ui';
 import { useState } from 'react';
 
 const RegisterPage = () => {
+  const { login } = useAuth();
   const { register, loading, error } = useRegister();
   const [username, setUsername] = useState('');
 
@@ -13,7 +14,8 @@ const RegisterPage = () => {
 
     setUsername(values.username);
 
-    await register(values);
+    const { data } = await register(values);
+    login(data.user, data.token);
   };
 
   return loading ? (
