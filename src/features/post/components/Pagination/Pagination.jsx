@@ -1,22 +1,29 @@
 import styles from './Pagination.module.scss';
-import { Button, Input } from '@/components/ui';
+import { Button } from '@/components/ui';
 
-const Pagination = () => {
+const Pagination = ({ page, totalPages, setPage }) => {
   return (
     <nav className={styles.pagination} aria-label="Post pagination">
       <div className={styles.page}>
-        <Input
-          type="number"
-          label="Current page"
-          id="page-input"
-          srOnly
-          className={styles.pageInput}
-        />
-        <span>/ 10</span>
+        <span>
+          {page} / {totalPages}
+        </span>
       </div>
       <div className={styles.actions}>
-        <Button variant="outline">Previous</Button>
-        <Button variant="outline">Next</Button>
+        <Button
+          variant="outline"
+          onClick={() => setPage((prev) => prev - 1)}
+          disabled={page === 1}
+        >
+          Previous
+        </Button>
+        <Button
+          variant="outline"
+          onClick={() => setPage((prev) => prev + 1)}
+          disabled={page === totalPages}
+        >
+          Next
+        </Button>
       </div>
     </nav>
   );

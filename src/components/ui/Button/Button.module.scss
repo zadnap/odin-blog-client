@@ -30,6 +30,10 @@
 
   &:disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    cursor: auto;
+
+    &:hover {
+      border: 1px solid $color-border;
+    }
   }
 }

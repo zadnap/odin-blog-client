@@ -9,8 +9,8 @@ const PostList = ({ title, posts = [] }) => {
       </h2>
       <ul className={styles.postGrid}>
         {posts.map((post) => (
-          <li>
-            <PostCard key={post.id} {...post} />
+          <li key={post.id}>
+            <PostCard {...post} />
           </li>
         ))}
       </ul>
