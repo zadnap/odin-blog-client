@@ -1,9 +1,9 @@
 import styles from './Pagination.module.scss';
 import { Button } from '@/components/ui';
 
-const Pagination = ({ page, totalPages, setPage }) => {
+const Pagination = ({ ariaLabel, page, totalPages, setPage }) => {
   return (
-    <nav className={styles.pagination} aria-label="Post pagination">
+    <nav className={styles.pagination} aria-label={ariaLabel}>
       <div className={styles.page}>
         <span>
           {page} / {totalPages}

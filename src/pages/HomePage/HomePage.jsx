@@ -1,6 +1,6 @@
 import { HeroSection } from '@/features/home/components';
-import { PostList, Pagination } from '@/features/post/components';
-import { Loading } from '@/components/ui';
+import { PostList } from '@/features/post/components';
+import { Loading, Pagination } from '@/components/ui';
 import { usePosts } from '@/features/post/hooks/usePosts';
 import styles from './HomePage.module.scss';
 import { useState } from 'react';
@@ -19,6 +19,7 @@ const HomePage = () => {
       )}
       {meta && (
         <Pagination
+          ariaLabel="Post pagination"
           page={meta.page}
           totalPages={meta.totalPages}
           setPage={setPage}
