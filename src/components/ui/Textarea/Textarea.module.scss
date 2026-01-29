@@ -1,0 +1,31 @@
+@use '@/styles/abstract/variables' as *;
+
+.textareaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  .label {
+    &.srOnly {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
+  .textarea {
+    border: none;
+    outline: none;
+    border: 1px solid $color-border;
+    height: 150px;
+    border-radius: $radius-sm;
+    padding: $space-2;
+    resize: none;
+  }
+}

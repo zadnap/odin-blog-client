@@ -1,19 +1,18 @@
-import styles from './Input.module.scss';
+import styles from './Textarea.module.scss';
 
-const Input = ({
+const Textarea = ({
   id,
-  label,
   type = 'text',
-  placeholder,
+  label,
   name,
-  defaultValue,
+  placeholder,
   value,
   onChange,
   srOnly,
   className = '',
 }) => {
   return (
-    <div className={`${styles.inputWrapper} ${className}`}>
+    <div className={`${styles.textareaWrapper} ${className}`}>
       {label && (
         <label
           htmlFor={id}
@@ -22,18 +21,17 @@ const Input = ({
           {label}
         </label>
       )}
-      <input
-        id={id}
+      <textarea
+        className={styles.textarea}
         type={type}
-        placeholder={placeholder}
         name={name}
+        id={id}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
-        defaultValue={defaultValue}
-        className={styles.input}
-      />
+      ></textarea>
     </div>
   );
 };
 
-export default Input;
+export default Textarea;

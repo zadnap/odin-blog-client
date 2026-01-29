@@ -6,6 +6,7 @@ import MainNav from './MainNav/MainNav';
 import PostCard from './PostCard/PostCard';
 import Loading from './Loading/Loading';
 import Pagination from './Pagination/Pagination';
+import Textarea from './Textarea/Textarea';
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   PostCard,
   Loading,
   Pagination,
+  Textarea,
 };
