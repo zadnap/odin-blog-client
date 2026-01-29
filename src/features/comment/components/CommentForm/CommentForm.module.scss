@@ -1,0 +1,11 @@
+@use '@/styles/abstract/variables' as *;
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  .sendBtn {
+    align-self: flex-end;
+  }
+}

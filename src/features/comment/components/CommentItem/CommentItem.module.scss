@@ -1,0 +1,23 @@
+@use '@/styles/abstract/variables' as *;
+
+.commentItem {
+  padding: $space-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+
+  .header {
+    display: flex;
+    gap: $space-2;
+    font-size: $font-size-sm;
+    color: $color-text-title;
+  }
+
+  .author {
+    font-weight: 600;
+    color: $color-text-body;
+  }
+
+  .content {
+    line-height: 1.6;
+  }
+}
