@@ -1,13 +1,8 @@
-import useAuth from '@/features/auth/hooks/useAuth';
-import CommentForm from '../CommentForm/CommentForm';
 import CommentItem from '../CommentItem/CommentItem';
 import styles from './CommentList.module.scss';
 import { Pagination } from '@/components/ui';
-import { Link } from 'react-router';
 
 const CommentList = ({ page, setPage, meta, comments = [] }) => {
-  const { isAuthenticated } = useAuth();
-
   return (
     <section className={styles.commentList}>
       {meta?.total > 0 ? (
@@ -28,13 +23,6 @@ const CommentList = ({ page, setPage, meta, comments = [] }) => {
           totalPages={meta.totalPages}
           setPage={setPage}
         />
-      )}
-      {isAuthenticated ? (
-        <CommentForm />
-      ) : (
-        <p className={styles.notiBox}>
-          <Link to="/auth/login">Sign in</Link> to comment
-        </p>
       )}
     </section>
   );

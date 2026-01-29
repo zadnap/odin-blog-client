@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { getComments } from '../services/comment.api';
 
 export const useComments = (postId, { page = 1, limit = 8 } = {}) => {
@@ -7,35 +7,32 @@ export const useComments = (postId, { page = 1, limit = 8 } = {}) => {
   const [cmtLoading, setCmtLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const loadComments = useCallback(async () => {
     if (!postId) return;
 
-    let cancelled = false;
+    try {
+      setCmtLoading(true);
+      setError(null);
 
-    const loadComments = async () => {
-      try {
-        setCmtLoading(true);
-        setError(null);
-
-        const { data, meta } = await getComments(postId, { page, limit });
-
-        if (!cancelled) {
-          setComments(data);
-          setMeta(meta);
-        }
-      } catch (err) {
-        if (!cancelled) setError(err);
-      } finally {
-        if (!cancelled) setCmtLoading(false);
-      }
-    };
-
-    loadComments();
-
-    return () => {
-      cancelled = true;
-    };
+      const { data, meta } = await getComments(postId, { page, limit });
+      setComments(data);
+      setMeta(meta);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setCmtLoading(false);
+    }
   }, [postId, page, limit]);
 
-  return { comments, meta, cmtLoading, error };
+  useEffect(() => {
+    loadComments();
+  }, [loadComments]);
+
+  return {
+    comments,
+    meta,
+    cmtLoading,
+    error,
+    refetch: loadComments,
+  };
 };
