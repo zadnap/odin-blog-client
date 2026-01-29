@@ -1,4 +1,4 @@
-import { HeroSection, SubscribeSection } from '@/features/home/components';
+import { HeroSection } from '@/features/home/components';
 import { PostList, Pagination } from '@/features/post/components';
 import { Loading } from '@/components/ui';
 import { usePosts } from '@/features/post/hooks/usePosts';
@@ -24,7 +24,6 @@ const HomePage = () => {
           setPage={setPage}
         />
       )}
-      <SubscribeSection />
     </div>
   );
 };
