@@ -9,8 +9,6 @@ const HomePage = () => {
   const [page, setPage] = useState(1);
   const { posts, meta, loading } = usePosts({ page });
 
-  console.log(meta);
-
   return (
     <div className={styles.homePage}>
       <HeroSection />

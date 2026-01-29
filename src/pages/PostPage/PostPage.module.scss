@@ -3,17 +3,5 @@
 .postPage {
   display: flex;
   flex-direction: column;
-  gap: $space-3;
-
-  .currentPost {
-    display: flex;
-    gap: $space-6;
-
-    .postDetail {
-      flex: 4;
-      display: flex;
-      flex-direction: column;
-      gap: $space-4;
-    }
-  }
+  gap: $space-6;
 }

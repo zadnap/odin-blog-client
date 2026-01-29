@@ -1,28 +1,36 @@
-import {
-  PostList,
-  PostHeader,
-  PostImage,
-  PostContent,
-  PostNavigation,
-} from '@/features/post/components';
+import { PostHeader, PostImage, PostContent } from '@/features/post/components';
+import { Loading } from '@/components/ui';
+import { usePostBySlug } from '@/features/post/hooks/usePostBySlug';
+import { useParams } from 'react-router';
 import styles from './PostPage.module.scss';
+import { formatDate } from '@/utils/date';
+import { calculateReadingTime } from '@/utils/readTime';
 
 const PostPage = () => {
-  return (
+  const { slug } = useParams();
+  const { post, loading, error } = usePostBySlug(slug);
+
+  return loading ? (
+    <Loading message="Loading post" />
+  ) : (
     <article className={styles.postPage}>
-      <div className={styles.currentPost}>
-        <div className={styles.postDetail}>
-          <PostHeader
-            title="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            createdAt="Jan 6, 2026"
-            readTime="8 min"
-          />
-          <PostImage />
-          <PostContent />
-        </div>
-        <PostNavigation />
-      </div>
-      <PostList title="Recommended Posts" />
+      <PostHeader
+        title={post.title}
+        createdAt={formatDate(post.createdAt)}
+        readTime={calculateReadingTime({
+          description: post.description,
+          sections: post.postSections,
+        })}
+      />
+      <PostImage
+        image={post.imageUrl}
+        alt={`${post.title}'s image`}
+        figcaption={post.title}
+      />
+      <PostContent
+        description={post.description}
+        sections={post.postSections}
+      />
     </article>
   );
 };
