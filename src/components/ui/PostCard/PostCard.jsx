@@ -2,12 +2,12 @@ import { Link } from 'react-router';
 import postFallback from '@/assets/images/post-fallback.jpg';
 import styles from './PostCard.module.scss';
 
-const PostCard = ({ image, title, description, slug }) => {
+const PostCard = ({ imageUrl, title, description, slug }) => {
   return (
     <article className={styles.postCard}>
       <img
         className={styles.postImage}
-        src={image ?? postFallback}
+        src={imageUrl ?? postFallback}
         alt={title ? `${title}'s image` : 'Post image'}
       />
       <h3 className={styles.postTitle}>{title}</h3>
